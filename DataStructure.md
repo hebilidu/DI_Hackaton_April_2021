@@ -35,6 +35,9 @@ firstNameVariants
     array of strings
     Middle name, different spellings, different alphabets, other firstnames used by the person
 
+gender
+    M F
+
 birthDate
     date (yyyy-mm-dd)
 birthCity
