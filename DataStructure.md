@@ -61,7 +61,11 @@ eventDate
     date (yyyy-mm-dd)
 eventPlace
 
-picture
+profileImage
     image
+
+freeText
+    string
+    Any other info
 
 
