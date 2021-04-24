@@ -1,21 +1,58 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Test</title>
+    <title>Tree</title>
+    <link href="style.css" rel="stylesheet">
+    
 </head>
-
 <body>
-    <div id= "tree" class="container">
-        <div id="leaf" class="container">
-            <div id="member"></div>
+    <div class="header"></div>
+    <div class="contianer">
+        <!-- TREE -------------------------------------------------------------- -->
+        <div class="tree">
+            <ul>
+                <!-- NODE BLOCK ------------------------------------------------ -->
+                <li>
+                    <a href="#">
+                    <img src="1.png" alt="" width= "40px">
+                    <span>name</span>
+                    <span>date</span>
+                    <span>location</span>
+                    </a>
+                </li>
+                <li><a href="#">
+                    <img src="1.png">
+                    <span>name</span>
+                    <span>date</span>
+                    <span>location</span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <img src="1.png" alt="" width= "40px">
+                        <span>name</span>
+                        <span>date</span>
+                        <span>location</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            </ul>
         </div>
     </div>
-    <script src="main.js"></script>
+</body>
+</html>
+
+
+    <!-- <div id="leaf" class="button">
+        <div class="icon" ><iclass="memName" class="date" class="location"></i></div>
+    <span>Member</span>
+    <span>Date</span>
+    <span>Country</span>
+    </div> -->
 </body>
 
-</html>
+</html> 
