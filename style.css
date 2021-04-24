@@ -1,102 +1,126 @@
 *{
     margin: 0; padding: 0;
-    box-sizing: border;
-    font-family: Arial, Helvetica, sans-serif
+    box-sizing: border-box;
 }
 
- /* FAMLY TREE */
- .tree{
-    width: 100%; height: auto;
+body{
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    background: #fffac8;
+    font-family: sans-serif;
+}
+
+
+/* [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] */
+/* TREE */
+
+.tree{
+    width: 100%;height: auto;
     text-align: center;
 }
 
- .tree ul{
+.tree ul{
     padding-top: 20px;
     position: relative;
-    transition: 0.5s;
-}
-
- .tree li{
-    display: inline-table;
-    text-align: center;
-    list-style-type: none;
-    position:relative;
-    padding: 10px;
-    transition: 0.5s;
-}
-
- .tree li:before li:after{
-    content: '';
-    position: absolute;
-    width:50%; height: 10px;
-    top:0; right: 0;
-    border-top: 1px solid #ccc;
-}
-
- .tree li:after{
-    right:auto;left: 50%;
-    border-left: 1px solid #ccc;
-}
-
- .tree li:only-child:before{
-    padding-top:0;
-}
-
- .tree li:only-child:before li:only-child:after{
-    display: none;
-}
-
- .tree li:first-child:before li:last-child:after{
-    border:0 none;
-}
-
- .tree li:last-child:after{
-    border-right: 1px solid #ccc;
-    border-radius: 5px 0px 0px 0px;
-}
-
- .tree li:first-child:after{
-    border-radius: 5px 0px 0px 0px;
-}
-
- .tree ul ul:before {
-    content: "";
-    position: absolute;
-    width: 0; height:20px;
-    top: 0; left: 50%;
-    border-left: 1px solid #ccc;
-}
-
- .tree a{
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: inline-grid;
-    border-radius: 5px;
-    text-decoration-line: none;
     transition: .5s;
 }
 
-/* PROFILE PICTURE [][][] */
- .tree a img{
-    width:50px; height: 50px;
+.tree li {
+    display: inline-table;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 10px;
+    transition: .5s;
+}
+
+.tree li:before, li:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid black;
+    width:52%; height: 10px; 
+}
+
+.tree li:after{
+    right: auto; left: 50%;
+    border-left: 1px solid black;
+}
+
+.tree li:only-child:after, .tree li:only-child:before{
+    display: none;
+}
+
+.tree li:only-child{
+    padding-top: 0;
+}
+
+.tree li:first-child:before, :last-child:after{
+    border: 0 none;
+}
+
+.tree li:last-child:before{
+    border-right: 1px solid #ccc;
+    border-radius: 0px 5px 0px 0px;
+}
+
+.tree li:first-child::after{
+    border-radius: 5px 0px 0px 0px;
+}
+
+/* WIRES */
+.tree ul ul:before{
+    content:'';
+    position: absolute;
+    top: 0; left: 50%;
+    border-left:1px solid #ccc;
+    width: 0;height: 20px;
+}
+
+.tree a{
+    border: 1px solid black;
+    padding: 8px;
+    display: inline-grid;
+    border-radius: 5px;
+    text-decoration-line: none;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+/* PROFILE IMAGE */
+.tree a img{
+    width: 50px; height: 50px;
     margin-bottom: 10px !important;
-    border-radius: 50%;
+    border-radius: 100px;
     margin: auto;
 }
 
- .tree a span{
+.tree a span{
     border: 1px solid #ccc;
     border-radius: 5px;
-    color: #666; 
-    padding: 8px;
+    color: #666;
+    padding: 4px;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 500;
+
+}
+.tree li a:hover, .tree li a:hover img, .tree li a:hover span, .tree li a:hover+ul li a{
+    background: lightskyblue;
+    color: #000;
+    border: 1px solid #666;
+    box-shadow: 0px 0px 0px -5px #666;
 }
 
+.tree li a:hover+ul li:after, .tree li a:hover+ul li:before, .tree li a:hover+ul:before, .tree li a:hover+ul ul:before{
+    border-color: lightskyblue;
+}
+
+
 /* LEAF ICON */
-.container .button{
+.button{
     display: inline-block;
     width:80px;height:80px;
     /* float: left; */
@@ -111,16 +135,16 @@
     transition: all 0.2s ease-out;
 }
 
-.container .button:hover{
+.button:hover{
     width: 300px;
 }
 
-.container .button:nth-child() .icon{
+.button:nth-child() .icon{
     background-color: #97DC95;
     /* background-attachment: url(https://socialmediastart.nl/wp-content/uploads/2014/12/user-icon-png-person-user-profile-icon-20.png); */
 }
 
-.container .button .icon{
+.button .icon{
     display: inline-block;
     width: 80px; height: 80x;
     border-radius: 50px;
@@ -128,12 +152,12 @@
     line-height: 80px;
 }
 
-.container .button .icon i{
+.button .icon i{
     font-size: 16px;
     line-height: 20px;
 }
 
-.container .button span{
+.button span{
     font-size: 12px;
     font-weight: 100;
     line-height: 5px;
