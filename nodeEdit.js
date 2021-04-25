@@ -72,8 +72,12 @@ function convertGreg2Heb(gDate) {
 // **************************************************************************************
 // Node Edit mode : we arrive to the page with an existing node as an argument
 // Form fields are pre-filled with data from familyTrees.js
-currentNode = 2; // hard coded here but will come from calling page
+
 function editNode(currentNode) {
+    // Modify page title and button
+    document.getElementsByTagName('h2')[0].firstChild.nodeValue = "Edit a person's details";
+    document.getElementsByTagName('button')[0].firstChild.nodeValue = 'Update';
+    // Pre-fill fields from database
     inputsArray = document.getElementsByClassName('input');
     radiosArray = document.getElementsByClassName('radio');
     inputsArray[0].setAttribute('value', familyTree_TESTDATA[currentNode - 1].familyName);
@@ -94,11 +98,24 @@ function editNode(currentNode) {
         radiosArray[1].checked = true;
     }
     inputsArray[7].value = familyTree_TESTDATA[currentNode - 1].freeText;
-    document.getElementsByTagName('h2')[0].firstChild.nodeValue = "Edit a person's details";
-    document.getElementsByTagName('button')[0].firstChild.nodeValue = 'Update &nbsp &#10095';
+    let dad = familyTree_TESTDATA[currentNode - 1].dadIndex;
+    let mom = familyTree_TESTDATA[currentNode - 1].momIndex;
+    let dadFullName = familyTree_TESTDATA[dad - 1].firstName + ' ' + familyTree_TESTDATA[dad - 1].familyName;
+    let momFullName = familyTree_TESTDATA[mom - 1].firstName + ' ' + familyTree_TESTDATA[mom - 1].familyName;
+    inputsArray[8].setAttribute('value', dadFullName);
+    inputsArray[9].setAttribute('value', momFullName);
+    inputsArray[8].disabled = true;
+    inputsArray[9].disabled = true;
+    inputsArray[8].style.backgroundColor = "lightgrey";
+    inputsArray[9].style.backgroundColor = "lightgrey";
 }
 
 function createNode() {
+    // Modify page title and buttons
+    document.getElementsByTagName('h2')[0].firstChild.nodeValue = "Create a person's profile";
+    document.getElementsByTagName('button')[0].firstChild.nodeValue = 'Create';
+    document.getElementsByTagName('button')[1].style.visibility = 'hidden';
+
     nodeIndex = familyTree_TESTDATA.length;
     newNode = {
         "nodeIndex": nodeIndex,
@@ -115,11 +132,23 @@ function createNode() {
         "freeText": "",
         "dadIndex": 0,
         "momIndex": 0,
-    }
-    document.getElementsByTagName('h2')[0].firstChild.nodeValue = "Create a person's profile";
-    var txt = 'Create';
-    document.getElementsByTagName('button')[0].firstChild.nodeValue = txt;
+        "spouseIndex": [],
+    };
+    // Create parent fields data list
+    var nodesList = document.createElement('datalist');
+    nodesList.setAttribute('id', 'nodesList');
+    for (i in familyTree_TESTDATA) {
+        if (familyTree_TESTDATA[i].status === 'active') {
+            let fullName = familyTree_TESTDATA[i].firstName + ' ' + familyTree_TESTDATA[i].familyName;
+            var option = document.createElement('option');
+            option.setAttribute('value', fullName);
+            nodesList.appendChild(option);
+        }
+    };
+    document.getElementById('father').setAttribute('list', 'nodesList');
+    document.getElementById('mother').setAttribute('list', 'nodesList');
+    document.getElementById('father').parentNode.appendChild(nodesList);
 }
 
-action = +prompt('Select activity. 0: create or number: edit(number)');
+action = +prompt('Select activity. 0: Create or a number: Edit(number)');
 if (action === 0) { createNode() } else { editNode(action) };

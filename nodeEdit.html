@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <div class="container teal">
+    <div class="container teal opacity rounded-top">
         <h2>Edit a person's details</h2>
     </div>
-    <form class="container card">
+    <form class="container card opacity rounded-bottom">
         <br>
         <p>
             <label class="text-grey">Family name</label>
@@ -32,7 +32,7 @@
                 </p>
                 <p>
                     <label class="text-grey">Hebraic Birthdate</label>
-                    <input id="dateHeb" class="input border" type="text" pointer-events="none">
+                    <input id="dateHeb" class="input border" type="text" pointer-events="none" disabled>
                 </p>
             </div>
             <p id="birthplace half">
@@ -64,7 +64,7 @@
             <label class="text-grey">Additional information</label>
             <textarea class="input border" style="resize:none" label="freeText"></textarea>
         </p>
-        <div class="row">
+        <div id="parents" class="row">
             <p>
                 <label class="text-grey">Father</label>
                 <input id="father" class="input border" type="text">
@@ -74,7 +74,10 @@
                 <input id=mother class="input border" type="text">
             </p>
         </div>
-        <p><button type="button" class="btn padding teal" style="width:120px">Update &nbsp; &#10095;</button></p>
+        <div id="actions" class="row">
+            <p><button type="button" class="btn padding teal" style="width:120px">Update</button></p>
+            <p><button type="button" class="btn padding teal" style="width:120px">Delete</button></p>
+        </div>
     </form>
 
     <script src="familyTrees.js"></script>

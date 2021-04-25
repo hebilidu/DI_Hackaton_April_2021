@@ -10,7 +10,8 @@ const nodeDesc = [
     "profileImage",
     "freeText",
     "dadIndex",
-    "momIndex"
+    "momIndex",
+    "spouseIndex"
 ];
 
 let familyTree_TESTDATA = [{
@@ -28,6 +29,7 @@ let familyTree_TESTDATA = [{
         "freeText": "This is a sample text",
         "dadIndex": 3,
         "momIndex": 2,
+        "spouseIndex": [],
     },
     {
         "nodeIndex": 2,
@@ -44,6 +46,7 @@ let familyTree_TESTDATA = [{
         "freeText": "This is a sample text",
         "dadIndex": 0,
         "momIndex": 0,
+        "spouseIndex": [3],
     },
     {
         "nodeIndex": 3,
@@ -60,5 +63,6 @@ let familyTree_TESTDATA = [{
         "freeText": "This is a sample text",
         "dadIndex": 0,
         "momIndex": 0,
+        "spouseIndex": [2],
     }
 ];
