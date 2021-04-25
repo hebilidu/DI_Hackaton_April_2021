@@ -1,6 +1,6 @@
 const nodeDesc = [
     "nodeIndex",
-    "status";
+    "status",
     "familyName",
     "firstName",
     "birthDate",
