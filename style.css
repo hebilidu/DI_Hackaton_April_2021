@@ -7,79 +7,62 @@ body{
     height: 100vh;
     display: grid;
     align-items: center;
-    background: #fffac8;
+    background: lightgrey;
     font-family: sans-serif;
 }
 
+.container .col{
+    background-color: lime;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 20%; width: 100%;
+}
 
-/* [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] */
-/* TREE */
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 30px;
+}
+
+.card{
+    margin: 20px;
+}
+
+/* WIRE */
+#vert-line{
+    margin-top: 100px;
+    margin-bottom: 90px;
+    width: 60px;
+    height: 1px;
+    background-color: black;
+    justify-content: center;
+}
+
+#horz-line{
+    margin-top: 100px;
+    margin-bottom: 90px;
+    height:80px;width: 1px;
+    background-color: black;
+    justify-content: center;
+}
 
 .tree{
     width: 100%;height: auto;
     text-align: center;
 }
 
-.tree ul{
-    padding-top: 20px;
-    position: relative;
-    transition: .5s;
-}
-
-.tree li {
-    display: inline-table;
-    text-align: center;
-    list-style-type: none;
-    position: relative;
-    padding: 10px;
-    transition: .5s;
-}
-
-.tree li:before, li:after{
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 50%;
-    border-top: 1px solid black;
-    width:52%; height: 10px; 
-}
-
-.tree li:after{
-    right: auto; left: 50%;
-    border-left: 1px solid black;
-}
-
-.tree li:only-child:after, .tree li:only-child:before{
-    display: none;
-}
-
-.tree li:only-child{
-    padding-top: 0;
-}
-
-.tree li:first-child:before, :last-child:after{
-    border: 0 none;
-}
-
-.tree li:last-child:before{
-    border-right: 1px solid #ccc;
-    border-radius: 0px 5px 0px 0px;
-}
-
-.tree li:first-child::after{
-    border-radius: 5px 0px 0px 0px;
-}
-
 /* WIRES */
-.tree ul ul:before{
+/* .tree ul ul:before{
     content:'';
     position: absolute;
     top: 0; left: 50%;
     border-left:1px solid #ccc;
     width: 0;height: 20px;
-}
+} */
 
-.tree a{
+.tree a{width: 150px;
     border: 1px solid black;
     padding: 8px;
     display: inline-grid;
@@ -91,9 +74,9 @@ body{
 
 /* PROFILE IMAGE */
 .tree a img{
-    width: 50px; height: 50px;
+    width: 80px; height: 80px;
     margin-bottom: 10px !important;
-    border-radius: 100px;
+    border-radius: 160px;
     margin: auto;
 }
 
@@ -116,50 +99,4 @@ body{
 
 .tree li a:hover+ul li:after, .tree li a:hover+ul li:before, .tree li a:hover+ul:before, .tree li a:hover+ul ul:before{
     border-color: lightskyblue;
-}
-
-
-/* LEAF ICON */
-.button{
-    display: inline-block;
-    width:80px;height:80px;
-    /* float: left; */
-    margin: 0 5px;
-    /* PICTURE BELOW */
-    /* background-attachment: url(https://socialmediastart.nl/wp-content/uploads/2014/12/user-icon-png-person-user-profile-icon-20.png); */
-
-    /* background: lightblue;  */
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: all 0.2s ease-out;
-}
-
-.button:hover{
-    width: 300px;
-}
-
-.button:nth-child() .icon{
-    background-color: #97DC95;
-    /* background-attachment: url(https://socialmediastart.nl/wp-content/uploads/2014/12/user-icon-png-person-user-profile-icon-20.png); */
-}
-
-.button .icon{
-    display: inline-block;
-    width: 80px; height: 80x;
-    border-radius: 50px;
-    box-sizing: border-box;
-    line-height: 80px;
-}
-
-.button .icon i{
-    font-size: 16px;
-    line-height: 20px;
-}
-
-.button span{
-    font-size: 12px;
-    font-weight: 100;
-    line-height: 5px;
-    /* margin-left: 10px; */
 }
