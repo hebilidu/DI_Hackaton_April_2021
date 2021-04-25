@@ -8,9 +8,6 @@ body {
     font-family: Verdana, sans-serif;
     font-size: 15px;
     line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .padding {
@@ -36,6 +33,7 @@ body {
     padding: 5px 40px 5px 20px;
     width: 50%;
     background-color: white;
+    margin: auto;
 }
 
 .card,
@@ -113,4 +111,11 @@ button,
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+#portrait {
+    height: 90px;
+    width: 75px;
+    background-color: grey;
+    border: 1px solid;
 }
