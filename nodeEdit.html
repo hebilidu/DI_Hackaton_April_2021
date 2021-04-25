@@ -7,15 +7,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheGenealogyApp - Node create / edit</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nodeEdit.css">
 </head>
 
 <body>
-    <h1>Edit a node</h1>
-
-    <div id=nodeForm>
-        <ul id=nodeData></ul>
+    <div class="container teal">
+        <h2>Edit a person's details</h2>
     </div>
+    <form class="container card">
+        <br>
+        <p>
+            <label class="text-grey">Family name</label>
+            <input class="input border" type="text" required>
+        </p>
+        <p>
+            <label class="text-grey">First name</label>
+            <input class="input border" type="text" required>
+        </p>
+        <div class="row">
+            <div>
+                <p>
+                    <label class="text-grey">Birthdate</label>
+                    <input class="input border" type="date" required>
+                </p>
+                <p>
+                    <label class="text-grey">Hebraic Birthdate</label>
+                    <input class="input border" type="date" pointer-events="none">
+                </p>
+            </div>
+            <p id="birthplace half">
+                <label class="text-grey">Birthplace</label>
+                <input class="input border" type="text" placeholder="City">
+                <input class="input border" type="text" placeholder="Country">
+                <input class="input border" type="text" required placeholder="Continent">
+            </p>
+            <div>
+                <p>
+                    <label class="text-grey">Gender</label><br>
+                    <input id="male" class="radio" type="radio" name="gender" value="male" checked>
+                    <label>Male</label>
+                    <input id="female" class="radio" type="radio" name="gender" value="female">
+                    <label>Female</label>
+                </p>
+                <div id="portrait"><img src="./media/portraits/default.png" width="75px"></div>
+            </div>
+        </div>
+        <p>
+            <label class="text-grey">Additional information</label>
+            <textarea class="input border" style="resize:none" label="freeText"></textarea>
+        </p>
 
+        <p><button type="button" class="btn padding teal" style="width:120px">Update &nbsp; &#10095;</button></p>
+    </form>
+
+    <script src="familyTrees.js"></script>
+    <script src="nodeEdit.js"></script>
 </body>
 
 </html>
