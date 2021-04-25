@@ -2,7 +2,7 @@ Event : Developers.Institute Hackaton April 2021
 Class : Developers.Institute Full Stack Web Python
 Slack : #web-py18-ft-q2-2021
 Project name : TheGenealogyApp
-Project team : The Definitive Team
+Project team : DI-finition
 
 Terminology
 ===========
@@ -20,6 +20,9 @@ index
     integer
     Unique number allocated by the system at the creation of a node instance. Important to differentiate people with the same last and first names (although they can probably be distinguished with their birth date). This item is internal to the system and should not be displayed in the User Interface.
     Should be sequential and never re-used (if a node has been deleted, for example).
+
+status
+    "active", "deleted"
 
 familyName
     string alphabetical (latin alphabet? what about accents)
@@ -70,5 +73,9 @@ profileImage
 freeText
     string
     Any other info
+
+fatherIndex
+
+motherIndex
 
 
