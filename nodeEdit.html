@@ -32,14 +32,22 @@
                 </p>
                 <p>
                     <label class="text-grey">Hebraic Birthdate</label>
-                    <input class="input border" type="date" pointer-events="none">
+                    <input id="dateHeb" class="input border" type="text" pointer-events="none">
                 </p>
             </div>
             <p id="birthplace half">
                 <label class="text-grey">Birthplace</label>
                 <input class="input border" type="text" placeholder="City">
                 <input class="input border" type="text" placeholder="Country">
-                <input class="input border" type="text" required placeholder="Continent">
+                <input class="input border" type="text" list="continents" placeholder="unassigned" required>
+                <datalist id="continents">
+                    <option value="unassigned"></option>
+                    <option value="Africa"></option>
+                    <option value="America"></option>
+                    <option value="Asia"></option>
+                    <option value="Europe"></option>
+                    <option value="Oceania"></option>
+                </datalist>
             </p>
             <div>
                 <p>
@@ -56,7 +64,16 @@
             <label class="text-grey">Additional information</label>
             <textarea class="input border" style="resize:none" label="freeText"></textarea>
         </p>
-
+        <div class="row">
+            <p>
+                <label class="text-grey">Father</label>
+                <input id="father" class="input border" type="text">
+            </p>
+            <p>
+                <label class="text-grey">Mother</label>
+                <input id=mother class="input border" type="text">
+            </p>
+        </div>
         <p><button type="button" class="btn padding teal" style="width:120px">Update &nbsp; &#10095;</button></p>
     </form>
 
