@@ -1,10 +1,4 @@
-*,
- ::before,
- ::after {
-    box-sizing: inherit;
-}
-
-body {
+/* body {
     background-image: url("./media/wallpapers/Tree_AndrasKovacs.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,7 +7,7 @@ body {
     font-size: 15px;
     line-height: 1.5;
     padding-top: 1em;
-}
+} */
 
 .rounded-top {
     border-top-left-radius: 2em;
@@ -48,12 +42,13 @@ body {
     padding: 0.01em 16px;
 }
 
-.container {
+
+/* .container {
     padding: 5px 40px 5px 20px;
     width: 50%;
     background-color: white;
     margin: auto;
-}
+} */
 
 .card,
 .hover-shadow:hover {
@@ -126,11 +121,12 @@ button,
     white-space: nowrap;
 }
 
-.row {
+
+/* .row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+} */
 
 #dateHeb {
     background-color: lightgrey;
