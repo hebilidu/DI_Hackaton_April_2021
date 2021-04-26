@@ -26,27 +26,32 @@ body{
     border: 30px;
 }
 
-.card{
+.card{  
     margin: 20px;
 }
 
 /* WIRE */
 #vert-line{
-    margin-top: 100px;
-    margin-bottom: 90px;
-    width: 60px;
-    height: 1px;
-    background-color: black;
-    justify-content: center;
+width: 60px; height: 30px;
+background-color: aqua;
+justify-content:border;
+
+    /* width:30px; 
+    padding: 120px;
+    border-style: solid;
+    border-color: black;
+    border-width:0 1px 1px 0;
+    display: inline-block;
+    transform: rotate(45deg); */
 }
 
-#horz-line{
+/* #horz-line{
     margin-top: 100px;
     margin-bottom: 90px;
     height:80px;width: 1px;
     background-color: black;
     justify-content: center;
-}
+} */
 
 .tree{
     width: 100%;height: auto;
