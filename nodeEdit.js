@@ -21,7 +21,7 @@ function convertGreg2Heb(ymdG) {
 
     Http.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            for (i = 0; i < 1000; i++) {
+            for (i = 0; i < 3000; i++) {
                 // Do nothing
             }
             let reply = Http.responseText;

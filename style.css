@@ -1,11 +1,50 @@
 * {
-    font-family: Arial;
+    font-family: Verdana, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: peru;
+    background-image: url("./media/wallpapers/Tree_AndrasKovacs.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: 15px;
+    line-height: 1.5;
+    padding-top: 1em;
+}
+
+.rounded-top {
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+}
+
+.rounded-bottom {
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+
+.opacity {
+    opacity: 0.9 !important;
+}
+
+.container {
+    padding: 5px 40px 5px 20px;
+    width: 50%;
+    background-color: lightskyblue;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 

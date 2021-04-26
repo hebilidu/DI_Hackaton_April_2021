@@ -1,0 +1,35 @@
+body {
+    background-image: url("./media/wallpapers/worldmap_continents.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: 15px;
+    line-height: 1.5;
+    padding-top: 1em;
+}
+
+#world {
+    height: 100%;
+    width: auto;
+    margin-top: 10em;
+}
+
+#america {
+    width: 20em;
+    height: 20em;
+    background-color: lightcyan;
+}
+
+#europa,
+#africa {
+    width: 15em;
+    height: 15em;
+    background-color: lightcyan;
+}
+
+#asia,
+#oceania {
+    width: 15em;
+    height: 15em;
+    background-color: lightcyan;
+}
