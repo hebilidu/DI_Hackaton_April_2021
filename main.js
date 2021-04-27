@@ -1,35 +1,28 @@
-var button = document.querySelectorAll("btn");
+localStorage["currenttree"] = "familyTree_TESTDATA";
+localStorage["currentnode"] = 1;
 
-button.addEventListener("click", function(){
-    console.log("hello")
-    newNode = document.getElementsByTagName("li")
-    newNode = document.createAttribute()
+var displaytree = document.getElementById("displaytree");
+displaytree.addEventListener("click", function() {
+    localStorage["action"] = "displaytree";
+    window.open('displayTree.html', '_blank');
 })
-
-function addCouple(mother,father){
-    findNode = document.getElementsByTagName("li")
-
-}
-    
-function addBroSis(brother,sister){
-    findNode = document.getElementsByTagName("li")
-
-}
-
-function locFounder(){
-    // jump to map
-    // locate member
-    // track dates - timeline
-}
-    
-
-
-
-// create node which contain object with all information
-// ==>check birth date
-
-// display node in Tree
-// place node in couples according parenting
-
-// Use location in objects to place them on world map (opt. timeline from location to location)
-
+var displaymap = document.getElementById("displaymap");
+displaymap.addEventListener("click", function() {
+    localStorage["action"] = "displaymap";
+    window.open('geoloc.html', '_blank');
+})
+var editnode = document.getElementById("editnode");
+editnode.addEventListener("click", function() {
+    localStorage["action"] = "editnode";
+    window.open('nodeEdit.html', '_blank');
+})
+var createnode = document.getElementById("createnode");
+createnode.addEventListener("click", function() {
+    localStorage["action"] = "createnode";
+    window.open('nodeEdit.html', '_blank');
+})
+var createtree = document.getElementById("createtree");
+createtree.addEventListener("click", function() {
+    localStorage["action"] = "createtree";
+    alert('Sorry, this functionality is not available yet');
+})
