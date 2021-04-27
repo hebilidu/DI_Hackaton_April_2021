@@ -122,8 +122,19 @@ function createNode(tree) {
     document.getElementById('father').parentNode.appendChild(nodesList);
 }
 
-// editNode(familyTree_TESTDATA, 1);
-createNode(familyTree_TESTDATA)
+// Get variables from calling page
+currentTree = localStorage["currenttree"];
+currentNode = localStorage["currentnode"];
+action = localStorage["action"];
+console.log(action);
+if (action === "addnode") {
+    createNode(familyTree_TESTDATA);
+};
+if (action === "editnode") {
+    editNode(familyTree_TESTDATA, 1);
+};
+
+
 
 // action = +prompt('Select activity. 0: Create or a number: Edit(number)');
 // if (action === 0) { createNode(familyTree_TESTDATA) } else { editNode(familyTree_TESTDATA, action) };

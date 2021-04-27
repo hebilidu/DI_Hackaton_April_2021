@@ -17,8 +17,8 @@ editnode.addEventListener("click", function() {
     window.open('nodeEdit.html', '_blank');
 })
 var createnode = document.getElementById("createnode");
-createnode.addEventListener("click", function() {
-    localStorage["action"] = "createnode";
+addnode.addEventListener("click", function() {
+    localStorage["action"] = "addnode";
     window.open('nodeEdit.html', '_blank');
 })
 var createtree = document.getElementById("createtree");
