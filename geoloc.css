@@ -15,9 +15,11 @@ body {
 }
 
 #america {
-    width: 20em;
-    height: 20em;
+    width: 15em;
+    height: 15em;
     background-color: lightcyan;
+    margin-top: 10em;
+    margin-left: 2em;
 }
 
 #europa,
