@@ -6,38 +6,24 @@ https://www.hebcal.com/converter?cfg=json&gy=2011&gm=6&gd=2&g2h=1
     g2h=1 – Convert from Gregorian to Hebrew date
     gs=on – After sunset on Gregorian date
     cfg=json – output format is JSON (cfg=json) or XML (cfg=xml)
-
 */
 function convertGreg2Heb(ymdG) {
-    const Http = new XMLHttpRequest();
+    let answer = [];
     let gy = ymdG.slice(0, 4);
     let gm = ymdG.slice(4, 6);
     let gd = ymdG.slice(6);
-    const url = 'https://www.hebcal.com/converter?cfg=json&gy=' + gy + '&gm=' + gm + '&gd=' + gd + '&g2h=1';
-    let finalOutput = [];
-
-    Http.open('GET', url);
-    Http.send();
-
-    Http.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            for (i = 0; i < 3000; i++) {
-                // Do nothing
-            }
-            let reply = Http.responseText;
-            let obj = JSON.parse(reply);
-            let hd = obj.hd;
-            let hm = obj.hm;
-            let hy = obj.hy;
-            let hebrew = obj.hebrew;
-            console.log(finalOutput); // This instruction acts as a timer !
-            finalOutput = [hd + ' ' + hm + ' ' + hy, hebrew];
-            console.log(finalOutput); // This instruction acts as a timer !
-        }
-    };
-
-    return finalOutput;
+    fetch('https://www.hebcal.com/converter?cfg=json&gy=' + gy + '&gm=' + gm + '&gd=' + gd + '&g2h=1')
+        .then(res => res.json())
+        .then(data => {
+            let hd = data.hd;
+            let hm = data.hm;
+            let hy = data.hy;
+            let hebrew = data.hebrew;
+            answer = [hd + ' ' + hm + ' ' + hy, hebrew];
+            document.getElementsByClassName('input')[3].setAttribute('value', answer[0]);
+        })
 }
+
 /* **************************************************************************** */
 // Node Edit mode : we arrive to the page with an existing node as an argument
 // Form fields are pre-filled with data from familyTrees.js
@@ -56,9 +42,7 @@ function editNode(tree, currentNode) {
     birthDate_m = birthDate_ymd.slice(4, 6);
     birthDate_y = birthDate_ymd.slice(0, 4);
     inputsArray[2].setAttribute('value', birthDate_y + '-' + birthDate_m + '-' + birthDate_d);
-    console.log(convertGreg2Heb(birthDate_ymd));
-    birthDate_heb = convertGreg2Heb(birthDate_ymd);
-    inputsArray[3].setAttribute('value', birthDate_heb);
+    convertGreg2Heb(birthDate_ymd);
     inputsArray[4].setAttribute('value', tree[currentNode - 1].birthCity);
     inputsArray[5].setAttribute('value', tree[currentNode - 1].birthCountry);
     inputsArray[6].setAttribute('value', tree[currentNode - 1].birthContinent);
